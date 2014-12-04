@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    Note: If you modify this file, you must restart the XL Deploy server.
+-->
+<synthetic xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd" xmlns="http://www.xebialabs.com/deployit/synthetic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<type-modification type="overthere.SshHost">
+    <method name="hog" 
+            description="Look for biggest files on file system"
+            task-description="Look for biggest files on file system"
+            delegate="jython"
+            script="custom/host/hog.py">
+        <parameters>
+            <parameter name="path"  kind="string" description="Path to check"/> 
+            <parameter name="slash" kind="string" description="Path seperator" default="/" /> 
+            <parameter name="maxfiles" kind="integer" description="Top Number of File to return" default="2" /> 
+        </parameters>
+    </method>
+</type-modification>
+
+</synthetic>
